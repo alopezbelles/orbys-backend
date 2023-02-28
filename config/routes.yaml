@@ -8,7 +8,7 @@ controllers:
 books:
     path: /allbooks
     controller: App\Controller\BookController::list
-    
+
 
 # Ruta para añadir nuevo libro:
 newBooks:
@@ -16,3 +16,8 @@ newBooks:
     controller: App\Controller\AddBookController::addBooks
     method: get, post
 
+# Ruta para eliminar un libro: 
+deleteBook:
+    path: /books/{id}
+    controller: App\Controller\DeleteBookController::deleteBook
+    method: delete
