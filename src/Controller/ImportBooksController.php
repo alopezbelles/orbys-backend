@@ -18,7 +18,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ImportBooksController extends AbstractController
 {
-    
+     /**
+     * @Route("/books/add", name="books_add")
+     */
+
     public function import(SerializerInterface $serializer): JsonResponse
     {
 
@@ -54,7 +57,7 @@ class ImportBooksController extends AbstractController
             $book->setDescription($item['description']);
             $book->setWebsite($item['website']);
             $book->setCategory($item['category']);
-            $entityManager->persist($book);
+            $entityManager->persist($Book);
         }
         $entityManager->flush();
 

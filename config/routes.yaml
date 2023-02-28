@@ -3,3 +3,16 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+
+books:
+    path: /allbooks
+    controller: App\Controller\BookController::list
+    
+
+# Ruta para añadir nuevo libro:
+newBooks:
+    path: /books/new
+    controller: App\Controller\AddBookController::addBooks
+    method: get, post
+
